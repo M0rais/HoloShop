@@ -53,7 +53,7 @@ public class PacketReader_V1_16_3 implements PacketReader<Packet<?>> {
 
         int id = (int) getValue(packet, "a");
 
-        if (ShopDao.getShopByEntityID(id) == null) return;
+        if (!packetHologram.getEntities().contains(id)) return;
 
         String actionType = getValue(packet, "action").toString();
 

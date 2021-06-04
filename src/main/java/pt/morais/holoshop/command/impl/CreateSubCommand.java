@@ -10,6 +10,12 @@ import pt.morais.holoshop.manager.ShopManager;
 
 public class CreateSubCommand implements SubCommand {
 
+    private final ShopManager shopManager;
+
+    public CreateSubCommand(ShopManager shopManager) {
+        this.shopManager = shopManager;
+    }
+
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (!(sender instanceof Player)) {
@@ -54,7 +60,7 @@ public class CreateSubCommand implements SubCommand {
                 return;
             }
 
-            if (ShopManager.create(key, amount, location, item, price, sellPrice))
+            if (shopManager.create(key, amount, location, item, price, sellPrice))
                 player.sendMessage("§aHologram created.");
             else
                 player.sendMessage("§cThat key is already in use!");
