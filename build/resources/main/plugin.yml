@@ -1,0 +1,7 @@
+name: HoloShop
+version: 1.0.0
+main: pt.morais.holoshop.HoloShop
+depend:
+  - Vault
+commands:
+  holoshop:

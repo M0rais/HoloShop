@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'pt.m0rais'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly(files('libs/spigot-1.16.5.jar'))
+    compileOnly(files('libs/spigot-1.15.2.jar'))
+    compileOnly(files('libs/spigot-1.14.4.jar'))
+    compileOnly(files('libs/spigot-1.13.2.jar'))
+    compileOnly(files('libs/vault.jar'))
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
